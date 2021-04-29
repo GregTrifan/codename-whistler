@@ -1,39 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import tw from 'twin.macro'
+import { Button, Logo } from './components'
 
-function App() {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Create the counter (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+const Title = tw.h1`
+  font-extrabold text-8xl
+`
+const Subtitle = tw.h2`
+  font-bold text-3xl text-center text-gray-300
+`
+const styles = {
+  // Move long class sets out of jsx to keep it scannable
+  container: ({ hasBackground }) => [
+    tw`flex flex-col items-center justify-center h-screen`,
+    hasBackground && tw`bg-gradient-to-b from-electric to-ribbon`,
+  ],
 }
 
-export default App;
+const App = () => (
+  <div css={styles.container({ hasBackground: true })}>
+    <div tw="flex flex-col justify-center h-full gap-y-5">
+      <Title>Lorem Ipsum</Title>
+      <Subtitle>Under Work out there!</Subtitle>
+    </div>
+  </div>
+)
+
+export default App

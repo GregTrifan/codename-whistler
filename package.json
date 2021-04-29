@@ -1,27 +1,24 @@
 {
-  "name": "codename-whistler",
-  "description": "Lorem",
-  "version": "0.1.0",
-  "license": "MIT",
+  "babelMacros": {
+    "twin": {
+      "preset": "emotion"
+    }
+  },
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build",
-    "test": "web-test-runner \"src/**/*.test.jsx\"",
-    "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx}\""
+    "build": "snowpack build"
   },
   "dependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@snowpack/plugin-dotenv": "^2.0.5",
-    "@snowpack/plugin-react-refresh": "^2.4.0",
-    "@snowpack/web-test-runner-plugin": "^0.2.0",
-    "@testing-library/react": "^11.0.0",
-    "@web/test-runner": "^0.12.0",
-    "chai": "^4.2.0",
-    "prettier": "^2.0.5",
-    "snowpack": "^3.0.1"
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@snowpack/app-scripts-react": "^2.0.1",
+    "snowpack": "^3.3.5",
+    "tailwindcss": "^2.1.2",
+    "twin.macro": "^2.4.1"
   }
 }
