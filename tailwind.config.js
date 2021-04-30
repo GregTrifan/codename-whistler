@@ -1,9 +1,16 @@
+const colors = require('tailwindcss/colors')
 module.exports = {
   theme: {
     extend: {
       colors: {
-        electric: '#db00ff',
-        ribbon: '#0047ff',
+        transparent: 'transparent',
+        current: 'currentColor',
+        black: colors.black,
+        white: colors.white,
+        gray: colors.trueGray,
+        indigo: colors.indigo,
+        red: colors.rose,
+        yellow: colors.amber,
       },
       animation: {
         'gradient-x': 'gradient-x 7s ease infinite',
