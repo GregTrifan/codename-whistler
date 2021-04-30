@@ -1,6 +1,5 @@
 import React from 'react'
 import tw from 'twin.macro'
-import { Button, Logo } from './components'
 
 const Title = tw.h1`
   font-extrabold text-8xl
@@ -12,7 +11,7 @@ const styles = {
   // Move long class sets out of jsx to keep it scannable
   container: ({ hasBackground }) => [
     tw`flex flex-col items-center justify-center h-screen`,
-    hasBackground && tw`bg-gradient-to-b from-electric to-ribbon`,
+    hasBackground && tw`bg-gradient-to-b from-electric to-ribbon animate-gradient-y`,
   ],
 }
 
