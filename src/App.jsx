@@ -4,13 +4,16 @@ import Navbar from './components/Navbar'
 import Pad from './components/Pad'
 
 
-const App = () => (
-  <div tw="bg-black">
-    <Navbar />
-    <Pad />
+const App = () => {
+  const [zoom, setZoom] = React.useState(1);
+  const [border, setBorder] = React.useState(1);
+  return (
+    <div tw="bg-black">
+      <Navbar zoom={zoom} setZoom={setZoom} border={border} setBorder={setBorder} />
+      <Pad zoom={zoom} border={border} />
 
-  </div>
+    </div>
 
-)
-
+  )
+}
 export default App;

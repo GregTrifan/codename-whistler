@@ -1,6 +1,7 @@
 import "twin.macro";
 import { useEffect, useState } from "react"
-const Pad = () => {
+import AvatarEditor from 'react-avatar-editor'
+const Pad = ({ zoom, border }) => {
     const [windowSize, setWindowSize] = useState({
         width: undefined,
         height: undefined,
@@ -22,7 +23,14 @@ const Pad = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []); // Empty array ensures that effect is only run on mount
     return (
-        <canvas tw="bg-green-500" width={windowSize.width} height={String(windowSize.height - 58)} />
+        <AvatarEditor
+            scale={zoom}
+            height={windowSize.height - 158}
+            width={windowSize.width - 150}
+            tw="mx-auto bg-black"
+            borderRadius={border}
+            image="https://images.unsplash.com/photo-1620307813776-d11c11723100?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=828&q=80"
+            border={50} />
     )
 }
 export default Pad;
